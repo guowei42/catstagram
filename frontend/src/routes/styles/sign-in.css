@@ -1,0 +1,12 @@
+#sign-in-card {
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+}
+
+#center-image {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    justify-content: center;
+}
