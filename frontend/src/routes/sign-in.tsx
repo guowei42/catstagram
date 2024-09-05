@@ -1,43 +1,45 @@
-import {
-    Box,
-    Button,
-    Card,
-    Divider,
-    FormControl,
-    Stack,
-    TextField,
-} from "@mui/material";
-import "./styles/sign-in.css";
+import { Box, Button, Card, FormControl, TextField } from "@mui/material";
+import styled from "styled-components";
+
+const SignInComponent = styled(Box)`
+    display: flex;
+    flex: 1 1 auto;
+    align-items: center;
+    max-width: 350px;
+
+    & .sign-in-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    & .center-image {
+        width: 175px;
+        margin: 36px 0px 12px 0px;
+    }
+`;
+
+const FormComponentStyle = styled(FormControl)``;
 
 const SignIn = () => {
     return (
-        <Box
-            display="flex"
-            flex="1 1 auto"
-            alignItems="center"
-            justifyContent="center"
-        >
-            <Card id="sign-in-card">
-                <Stack spacing={2} width="250px">
-                    <div id="center-image">
-                        <Box
-                            component="img"
-                            src="../../assets/Catstagram-02-09-2024.png"
-                            width="175px"
-                        />
-                    </div>
-                    <FormControl>
+        <>
+            <SignInComponent>
+                <Card className="sign-in-card">
+                    <Box
+                        className="center-image"
+                        component="img"
+                        src="../../assets/Catstagram-02-09-2024.png"
+                    />
+                    <FormComponentStyle>
                         <TextField placeholder="Phone number, username or email" />
-                    </FormControl>
-                    <FormControl>
                         <TextField placeholder="Password" type="password" />
-                    </FormControl>
+                    </FormComponentStyle>
                     <Button variant="contained">Log In</Button>
-
-                    <Divider>OR</Divider>
-                </Stack>
-            </Card>
-        </Box>
+                </Card>
+            </SignInComponent>
+        </>
     );
 };
 
